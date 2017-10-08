@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :entries
+  get '/' => 'entries#index'
+
+  get '/entries' => 'entries#index'
+
 
   root 'entries#index'
 end
