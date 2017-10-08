@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/entries/:id/edit' => 'entries#edit'
 
-  put '/entries/:id' => 'entries#update'
+  patch '/entries/:id' => 'entries#update'
 
   delete '/entries/:id' => 'entries#destroy'
 
