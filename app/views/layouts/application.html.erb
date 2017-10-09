@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EmpanadaTheBlog</title>
+    <title>Empanadas Y'all</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <h1>Empanadas: The Blog</h1>
 
   <body>
+    <% if current_user %>
+    <span>hello, <%= link_to current_user.username, user_path(current_user.id) %> | <%= link_to "logout", '/logout' %></span>
+    <% else %>
+    <span><%= link_to 'login', '/login' %> | <%= link_to 'register', '/register' %></span>
+    <% end %>
     <%= yield %>
   </body>
 </html>

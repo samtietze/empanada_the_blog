@@ -13,7 +13,13 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-    if @entry.save
+    ####################################
+    # How to add the current_user.id to
+    # this without shoveling? Change the
+    # private params method??
+    #####################################
+    current_user.entries << @entry
+    if @entry.persisted?
       redirect_to @entry
     else
       @errors = @entry.errors.full_messages

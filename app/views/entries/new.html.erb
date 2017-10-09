@@ -1,3 +1,7 @@
 <h2>New Empanada Report</h2>
 
+<% if @errors %>
+<%= render '/errors' %>
+<% end %>
+
 <%= render '/entries/entry_form' %>
