@@ -2,6 +2,8 @@
 
 <ul>
 <% @entries.each do |entry| %>
-  <li><%= entry.title %><span class="post-stat-index"> | written by <%= entry.author.username %> | <%= entry.created_at %></span></li>
+  <li><%= link_to entry.title, entry_path(entry.id) %><span class="post-stat-index"> | written by <%= entry.author.username %> | <%= time_ago_in_words(entry.created_at) %></span></li>
 <% end %>
 </ul>
+
+<%= link_to 'File a New Review!', new_entry_path %>
