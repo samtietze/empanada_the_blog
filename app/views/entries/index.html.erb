@@ -1,2 +1,7 @@
 <h2>It's a blog!</h2>
 
+<ul>
+<% @entries.each do |entry| %>
+  <li><%= entry.title %><span class="post-stat-index"> | written by <%= entry.author.username %> | <%= entry.created_at %></span></li>
+<% end %>
+</ul>
