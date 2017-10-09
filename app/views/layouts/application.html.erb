@@ -10,6 +10,11 @@
   <h1>Empanadas: The Blog</h1>
 
   <body>
+    <% if current_user %>
+    <span>hello, <%= link_to current_user.username, user_path(current_user.id) %> | <%= link_to "logout", '/logout' %></span>
+    <% else %>
+    <span><%= link_to 'login', '/login' %> | <%= link_to 'register', '/register' %></span>
+    <% end %>
     <%= yield %>
   </body>
 </html>

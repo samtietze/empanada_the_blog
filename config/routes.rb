@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Adding resources for singular show page linking. Dumb!
-  resources :entries
+  resources :entries, :users
 
   get '/entries' => 'entries#index'
 
@@ -24,4 +24,9 @@ Rails.application.routes.draw do
 
   post '/users' => 'users#create'
 
+  get '/login' => 'sessions#new'
+
+  post '/login' => 'sessions#create'
+
+  get '/logout' => 'sessions#destroy'
 end
