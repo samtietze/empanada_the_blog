@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   get '/' => 'entries#index'
 
   root 'entries#index'
+
+  get '/register' => 'users#new'
+
+  post '/users' => 'users#create'
+
 end
