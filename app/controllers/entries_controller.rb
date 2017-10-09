@@ -8,6 +8,6 @@ class EntriesController < ApplicationController
   end
 
   def new
-    # @entry = Entry.new(params[:entry])
+    @entry = Entry.new
   end
 end
