@@ -13,7 +13,33 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-    @entry.save
+    if @entry.save
+      redirect_to @entry
+    else
+      @errors = @entry.errors.full_messages
+      render 'entries/new'
+    end
+  end
+
+  def edit
+    @entry = Entry.find(params[:id])
+  end
+
+  def update
+    @entry = Entry.find(params[:id])
+    @entry.assign_attributes(entry_params)
+
+    if @entry.save
+      redirect_to entry_path
+    else
+      @errors = @entry.errors.full_messages
+      render 'entries/edit'
+    end
+  end
+
+  def destroy
+    @entry.find(params[:id])
+    @entry.destroy
     redirect_to entries_path
   end
 

@@ -4,7 +4,7 @@
   <input type="submit" name="Create Entry!">
 </form> -->
 
-<%= form_for @entry, url: { action: "create" } do |f| %>
+<%= form_for @entry do |f| %>
   <p class="block">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

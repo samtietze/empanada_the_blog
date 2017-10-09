@@ -10,4 +10,6 @@
 
 <footer>
   <%= render 'entries/footer' %>
+  <%= link_to 'Edit this report', edit_entry_path %>
+  <%= link_to 'Delete?', @entry, method: :delete, data: { confirm: "For real? That's a valid empanada report." } %>
 </footer>

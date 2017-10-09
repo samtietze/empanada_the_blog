@@ -2,7 +2,7 @@
 
 <ul>
 <% @entries.each do |entry| %>
-  <li><%= link_to entry.title, entry_path(entry.id) %><span class="post-stat-index"> | written by <%= entry.author.username %> | <%= time_ago_in_words(entry.created_at) %></span></li>
+  <li><%= link_to entry.title, entry_path(entry.id) %><span class="post-stat-index"> | written by <%= link_to entry.author.username %> | <%= time_ago_in_words(entry.created_at) %> ago</span></li>
 <% end %>
 </ul>
 
