@@ -1,0 +1,15 @@
+<h2 id="show-title-header"><%= @entry.title %></h2>
+<h3 id="show-time-header"><%= @entry.created_at.strftime('%d %B, %R') %></h3>
+
+<div class="entry-container">
+  <p>
+    <%= @entry.body %>
+  </p>
+
+</div>
+
+<footer>
+  <%= render 'entries/footer' %>
+  <%= link_to 'Edit this report', edit_entry_path %>
+  <%= link_to 'Delete?', @entry, method: :delete, data: { confirm: "For real? That's a valid empanada report." } %>
+</footer>

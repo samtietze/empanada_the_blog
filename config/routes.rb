@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Adding resources for singular show page linking. Dumb!
+  resources :entries
 
   get '/entries' => 'entries#index'
 

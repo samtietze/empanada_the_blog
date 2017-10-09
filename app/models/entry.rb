@@ -1,3 +1,6 @@
 class Entry < ApplicationRecord
-  # validates stuff!
+
+  belongs_to :author, class_name: "User"
+
+  validates :title, :body, { presence: true }
 end
